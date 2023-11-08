@@ -16,7 +16,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.galataapplab.easenote.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -82,6 +82,12 @@ dependencies {
 
     // Text editor
     implementation("com.mohamedrejeb.richeditor:richeditor-compose:1.0.0-beta03")
+
+    // Android Testing
+    androidTestImplementation("com.google.truth:truth:1.1.4")
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.44")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.44")
+
 }
 
 kapt {

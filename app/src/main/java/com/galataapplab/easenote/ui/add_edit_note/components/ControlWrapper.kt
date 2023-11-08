@@ -40,7 +40,7 @@ fun ControlWrapper(
             if (selected) selectedColor
             else unselectedColor
         )
-        .padding(all = 8.dp), contentAlignment = Alignment.Center) {
+        .padding(all = 5.dp), contentAlignment = Alignment.Center) {
         Icon(
             imageVector = imageVector,
             contentDescription = contentDescription,

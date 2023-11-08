@@ -31,7 +31,7 @@ fun Navigation(
                 defaultValue = -1
             })
         ) {
-            AddEditNoteScreen()
+            AddEditNoteScreen(navController = navController)
         }
     }
 }

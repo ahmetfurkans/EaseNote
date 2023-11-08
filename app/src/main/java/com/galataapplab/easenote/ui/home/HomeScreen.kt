@@ -28,6 +28,9 @@ import com.galataapplab.easenote.core.util.Routes
 fun HomeScreen(
     navController: NavHostController, scaffoldState: ScaffoldState
 ) {
+
+    
+
     Scaffold(scaffoldState = scaffoldState, floatingActionButton = {
         FloatingActionButton(
             onClick = { navController.navigate(Routes.ADD_EDIT_NOTE) },

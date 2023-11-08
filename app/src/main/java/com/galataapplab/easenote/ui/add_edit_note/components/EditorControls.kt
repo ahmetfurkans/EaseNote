@@ -42,10 +42,7 @@ fun EditorControls(
     var italicSelected by rememberSaveable { mutableStateOf(false) }
     var underlineSelected by rememberSaveable { mutableStateOf(false) }
     var listSelected by rememberSaveable { mutableStateOf(false) }
-    var linkSelected by rememberSaveable { mutableStateOf(false) }
     var alignmentSelected by rememberSaveable { mutableIntStateOf(0) }
-    var showLinkDialog by remember { mutableStateOf(false) }
-
 
     Card(modifier = modifier, elevation = 10.dp) {
         Row(

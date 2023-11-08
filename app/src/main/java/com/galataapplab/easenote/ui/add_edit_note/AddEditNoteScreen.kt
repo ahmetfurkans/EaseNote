@@ -17,15 +17,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavController
 import com.galataapplab.easenote.core.ui.theme.LocalSpacing
 import com.galataapplab.easenote.ui.add_edit_note.components.CustomTextEditor
 import com.galataapplab.easenote.ui.add_edit_note.components.EditorControls
+import com.galataapplab.easenote.ui.add_edit_note.components.Toolbar
 import com.galataapplab.easenote.ui.add_edit_note.components.TransparentHintTextField
 import com.mohamedrejeb.richeditor.model.rememberRichTextState
 
 @Composable
 fun AddEditNoteScreen(
-    viewModel: AddEditNoteViewModel = hiltViewModel()
+    viewModel: AddEditNoteViewModel = hiltViewModel(), navController: NavController
 ) {
     val richTextState = rememberRichTextState()
     val state = viewModel.state
@@ -34,10 +36,11 @@ fun AddEditNoteScreen(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = spacing.spaceSmall, vertical = spacing.spaceMedium),
+            .padding(horizontal = spacing.spaceMedium, vertical = spacing.spaceMedium),
         verticalArrangement = Arrangement.SpaceBetween
     ) {
         Column {
+            Toolbar(onNavigateUp = { navController.navigateUp() }, onSaveClick = { TODO() })
             TransparentHintTextField(text = state.title,
                 textStyle = MaterialTheme.typography.h1,
                 hint = "Tittle...",
