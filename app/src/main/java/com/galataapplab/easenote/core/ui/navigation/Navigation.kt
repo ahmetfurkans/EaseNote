@@ -4,8 +4,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.ScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -19,7 +17,11 @@ import com.galataapplab.easenote.ui.home.HomeScreen
 fun Navigation(
     navController: NavHostController, scaffoldState: ScaffoldState
 ) {
-    NavHost(navController = navController, startDestination = Routes.HOME, modifier = Modifier.fillMaxSize()) {
+    NavHost(
+        navController = navController,
+        startDestination = Routes.HOME,
+        modifier = Modifier.fillMaxSize()
+    ) {
         composable(Routes.HOME) {
             HomeScreen(navController = navController, scaffoldState)
         }
@@ -31,7 +33,7 @@ fun Navigation(
                 defaultValue = -1
             })
         ) {
-            AddEditNoteScreen(navController = navController)
+            AddEditNoteScreen(navController = navController, scaffoldState = scaffoldState)
         }
     }
 }

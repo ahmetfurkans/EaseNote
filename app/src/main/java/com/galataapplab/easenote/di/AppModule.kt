@@ -7,6 +7,7 @@ import com.galataapplab.easenote.data.repository.NoteRepositoryImpl
 import com.galataapplab.easenote.domain.repository.NoteRepository
 import com.galataapplab.easenote.domain.use_case.AddNote
 import com.galataapplab.easenote.domain.use_case.DeleteNote
+import com.galataapplab.easenote.domain.use_case.GetNote
 import com.galataapplab.easenote.domain.use_case.GetNotes
 import com.galataapplab.easenote.domain.use_case.NoteUseCases
 import dagger.Module
@@ -41,7 +42,8 @@ object AppModule {
         return NoteUseCases(
             getNotes = GetNotes(repository),
             deleteNote = DeleteNote(repository),
-            addNote = AddNote(repository)
+            addNote = AddNote(repository),
+            getNote = GetNote(repository)
         )
     }
 }
